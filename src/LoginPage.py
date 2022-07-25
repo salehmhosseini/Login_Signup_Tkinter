@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
-from tkinter.ttk import Style
 
 from captcha.image import *
 import SignupPage
@@ -10,14 +9,14 @@ import random
 import string
 
 import webbrowser
-class loginPage:
+class LoginPage:
 
     def __init__(self):
         # creat an object from Tkinter
         root = Tk()
 
         # icon image
-        iconImage = PhotoImage(file=r"C:\Users\HUAWEI\Desktop\FirstProject/logo.png")
+        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
 
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
@@ -27,7 +26,7 @@ class loginPage:
         root.resizable(False, False)
 
         # logo image
-        logoImage = PhotoImage(file=r"C:\Users\HUAWEI\Desktop\FirstProject/logo.png")
+        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label
@@ -61,7 +60,7 @@ class loginPage:
         #function of switch to forget password page
         def switchToForgetPasswordPage(self):
             root.destroy()
-            ForgetPasswordPage.forgetPassword()
+            ForgetPasswordPage.ForgetPassword()
         # foreget password hyper link
         def callback(url):
             webbrowser.open_new(url)
@@ -84,7 +83,7 @@ class loginPage:
 
         self.image.write(self.captcha_text, 'CAPTCHA.png')
 
-        self.captchaImage = PhotoImage(file=r"C:\Users\HUAWEI\PycharmProjects\FirstProject/CAPTCHA.png")
+        self.captchaImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\src/CAPTCHA.png")
         self.captchaImage.subsample(80, 80)
         self.captchaLabel = Label(root, image=self.captchaImage)
         self.captchaLabel.pack(pady=10)
@@ -104,7 +103,7 @@ class loginPage:
 
         # change the captcha code by cliking on return button
 
-        returnImage = PhotoImage(file=r"C:\Users\HUAWEI\Desktop\FirstProject/return.png")
+        returnImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\return.png")
         returnLabel= Label(root , image =returnImage , cursor="hand2" , bg='LightCyan2')
         returnLabel.bind("<Button-1>" , returnButtonHandler())
 
@@ -144,7 +143,7 @@ class loginPage:
         #function of switch to cignup page
         def switchToSignUpPage(self):
              root.destroy()
-             SignupPage.singUp()
+             SignupPage.SignUp()
 
         #signuo hyper link label
         signUpHyperLabel = Label(root , text = "sign up here" , font=("plain" , 12) , fg="blue"

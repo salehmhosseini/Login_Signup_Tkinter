@@ -1,8 +1,12 @@
+import HelpPage
 import LoginPage
 import SignupPage
+import ForgetPasswordPage
+import EmailConfirmPage
 class main:
 
     def __init__(self):
         pass
 
-login = SignupPage.singUp()
+    # LoginPage.LoginPage()
+    HelpPage.Help()
