@@ -13,7 +13,7 @@ import LoginPage
 class SignUp:
     emailVariable = StringVar
     def __init__(self):
-        Email.Email()
+
         root = Tk()
         iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\logo.png")
         root.iconphoto(False, iconImage)
@@ -280,11 +280,14 @@ class SignUp:
         #back to log in page button
         BackToLoginPageButton = Button(root  , text="Back to login" , font=("plain" , 13 ) ,
                                        width=12 , bd = 3 ,bg="#E4CDEF", cursor="hand2" ,command= backToLoinPageButtonHandler)
-        # BackToLoginPageButton.bind("<Button-1>" , backToLoinPageButtonHandler())
+
         BackToLoginPageButton.place(x=10 , y=10)
 
         #help button handler
         def helpButtonHandler(event):
+            root.destroy()
+            HelpPage.Help()
+        def helpButtonHandler2():
             root.destroy()
             HelpPage.Help()
 
@@ -292,7 +295,7 @@ class SignUp:
 
         #help button
         helpButton = Button(root  , text="Help (Ctrl+h)" , font=("plain" , 13 ) , width=12 , bd = 3 ,
-                            bg="#E4CDEF" , cursor="hand2" , command=helpButtonHandler)
+                            bg="#E4CDEF" , cursor="hand2" , command=helpButtonHandler2)
         helpButton.place(x = 870 , y =10)
         root.bind('<Control-h>' , helpButtonHandler)
 

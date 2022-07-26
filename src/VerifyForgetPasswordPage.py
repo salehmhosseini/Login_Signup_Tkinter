@@ -4,11 +4,12 @@ from tkinter import messagebox
 import LoginPage
 import SignupPage
 import Email
+import Emai2
 
 
-class EmailConfirm:
+class VerifyForgetPassword:
     def __init__(self):
-        Email.Email()
+        Emai2.Email2()
         root = Tk()
 
         # icon image
@@ -93,7 +94,7 @@ class EmailConfirm:
         # email sender function
         def emailSender():
             root.update()
-            Email.Email()
+            Emai2.Email2()
 
 
 

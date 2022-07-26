@@ -4,11 +4,12 @@ from tkinter import messagebox
 import LoginPage
 import SignupPage
 import Email
+import Emai2
 
 
-class EmailConfirm:
+class ForgetPasswordComfrim:
     def __init__(self):
-        Email.Email()
+        # Emai2.Email2()
         root = Tk()
 
         # icon image
@@ -57,7 +58,7 @@ class EmailConfirm:
 
         #verify button handler
         def verifyButtonHandler():
-            if(Email.Email.verifyCodeVariable==int(verifyEntry.get())):
+            if(Emai2.Email2.verifyCodeVariable==int(verifyEntry.get())):
                 messagebox.showinfo("successfully" , "you are successfully signed up!")
             else:
                 messagebox.showerror("error" , "the verify code that entered is not valid!")
