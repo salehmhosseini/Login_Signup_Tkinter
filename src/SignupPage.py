@@ -1,13 +1,19 @@
 from tkinter import *
 import re
+
+import Email
+import EmailConfirmPage
 import HelpPage
+
 
 
 import LoginPage
 
 
 class SignUp:
+    emailVariable = StringVar
     def __init__(self):
+        Email.Email()
         root = Tk()
         iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\logo.png")
         root.iconphoto(False, iconImage)
@@ -150,6 +156,7 @@ class SignUp:
             if (self.emailStatus):
                 emailTextField.config(bg="white")
                 userNameTextField.focus_set()
+                SignUp.emailVariable=emailTextField.get()
 
             else:
                 emailTextField.config(bg="#ffe1e1")
@@ -236,11 +243,19 @@ class SignUp:
 
         confirmPasswordTextField.bind('<Return>', confirmPasswordController)
 
+        # switchToEmailConfirmPage
+        def switchToEmailConfirmPage():
+            root.destroy()
+            EmailConfirmPage.EmailConfirm()
+
+
 
         #sign up button
         signUpButton = Button(root  , text="Sign up" , font=("plain" , 13 ) , width=12 , bd = 3 ,
-                              bg="#E4CDEF", state=DISABLED)
+                              bg="#E4CDEF", state=DISABLED , command=switchToEmailConfirmPage)
         signUpButton.pack()
+
+
         def signUPButtonHandler(event):
 
             if(self.firstNameStatus and self.lastNameStatus and
@@ -248,6 +263,9 @@ class SignUp:
             self.phoneNumberStatus and self.passwordStatus and
             self.cnfirmPasswordStatus):
              signUpButton.config(cursor="hand2" , state=NORMAL)
+
+
+
             else :
                 signUpButton.config(state=DISABLED)
         root.bind('<Return>', signUPButtonHandler)

@@ -8,7 +8,7 @@ import Email
 
 class EmailConfirm:
     def __init__(self):
-        # Email.Email()
+        Email.Email()
         root = Tk()
 
         # icon image
@@ -18,8 +18,7 @@ class EmailConfirm:
         root.geometry("1000x650")
         root.title("Confirm email Page")
         root.resizable(False, False)
-
-
+        root.mainloop()
 
         self.verifyEntryValue = StringVar
 
@@ -173,9 +172,6 @@ class EmailConfirm:
                 # after every one sec by one
                 user_input -= 1
         countdowntimer()
-        root.mainloop()
-
-
 
 
 

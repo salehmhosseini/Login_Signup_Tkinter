@@ -1,3 +1,4 @@
+from time import strftime
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
@@ -62,8 +63,7 @@ class LoginPage:
             root.destroy()
             ForgetPasswordPage.ForgetPassword()
         # foreget password hyper link
-        def callback(url):
-            webbrowser.open_new(url)
+
 
         forgetPasswordHyper = Label(root, text="Forget password", fg="blue",
                                     cursor="hand2" , font=("plain", 12) , bg='LightCyan2')
@@ -150,5 +150,19 @@ class LoginPage:
                                  , cursor="hand2" , bg='LightCyan2')
         signUpHyperLabel.pack(pady=5)
         signUpHyperLabel.bind("<Button-1>",switchToSignUpPage)
+
+        #show local time
+
+        def my_time():
+            time_string = strftime('%H:%M:%S %p\n %Y / %b / %d')  # time format
+            l1.config(text=time_string)
+            l1.after(1000, my_time)  # time delay of 1000 milliseconds
+
+        my_font = ('times', 20, 'bold')  # display size and style
+
+        l1 =Label(root, font = my_font , bg='LightCyan2')
+        l1.place(x=20 , y=20)
+
+        my_time()
 
         root.mainloop()

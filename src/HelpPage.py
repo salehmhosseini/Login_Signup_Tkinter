@@ -1,14 +1,3 @@
-# import smtplib
-# from email.message import EmailMessage
-# msg = EmailMessage()
-# msg['Subject']="test"
-# msg['From']="accessfouri@gmail.com"
-# msg['To']="accessfouri@gmail.com"
-# msg.set_content("first send email via python")
-# server = smtplib.SMTP_SSL('smtp.gmail.com' , 465)
-# server.login("accessfouri@gmail.com" , "Amir09011597145")
-# server.send_message(msg)
-# server.quit()
 
 from tkinter import *
 import LoginPage
