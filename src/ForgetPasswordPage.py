@@ -2,7 +2,7 @@ import re
 from time import strftime
 from tkinter import *
 
-import ForgetPasswordEmailConfirmPage
+import VerifyForgetPasswordPage
 import LoginPage
 
 
@@ -15,7 +15,7 @@ class ForgetPassword:
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
-        root.title("Forger password Page")
+        root.title("Forget password Page")
         root.resizable(False, False)
 
         # logo image
@@ -54,7 +54,7 @@ class ForgetPassword:
         #sendcode button handler
         def sendCodeButtonHandler():
             root.destroy()
-            ForgetPasswordEmailConfirmPage.ForgetPasswordComfrim()
+            VerifyForgetPasswordPage.VerifyForgetPassword()
 
         #send verify code into email
         sendCodeButton = Button(root, text="send" , font=myFont  , bg="#E4CDEF" , state=DISABLED , command=sendCodeButtonHandler)

@@ -12,6 +12,10 @@ class Email:
            Email.verifyCodeVariable= random.randrange(100000, 999999)
            return Email.verifyCodeVariable
 
+        # email : salehteset2002@gmail.com
+        #password : "indryqehepsntkem"
+
+
 
         def getEmail(self):
             return SignupPage.SignUp.emailVariable
@@ -20,13 +24,13 @@ class Email:
 
         def sendMail(self):
             emailHost = "smtp.gmail.com"
-            emailHostUser = "salehtest2002@gmail.com"
+            emailHostUser = "salehtest22002@gmail.com"
             emailPortSSL = 465
-            emailHostPassword = "indryqehepsntkem"
+            emailHostPassword ="vshyekedzycrdyre"
 
             with smtplib.SMTP_SSL(emailHost, emailPortSSL) as server:
                 server.login(emailHostUser, emailHostPassword)
-                server.sendmail(emailHostUser, getEmail(self) ,
+                server.sendmail(emailHostUser, "salehmhosseini@gmail.com" ,
                                 f" the verify code : {makeRandomNumber(self)}")
 
         sendMail(self)

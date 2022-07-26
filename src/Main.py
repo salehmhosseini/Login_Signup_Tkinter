@@ -1,3 +1,4 @@
+import Emai2
 import Email
 import HelpPage
 import LoginPage
@@ -6,7 +7,8 @@ import SignupPage
 import ForgetPasswordPage
 import test
 import ChangePasswordPage
-import ForgetPasswordEmailConfirmPage
+import VerifyForgetPasswordPage
+import Emai2
 
 class main:
 
@@ -18,7 +20,9 @@ class main:
     # EmailConfirmPage.EmailConfirm()
     # test.EmailConfirm()
     # SignupPage.SignUp()
-    # ForgetPasswordPage.ForgetPassword()
+    ForgetPasswordPage.ForgetPassword()
     # Email.Email()
     # ChangePasswordPage.CahngePassword()
-    # ForgetPasswordEmailConfirmPage.ForgetPasswordComfrim()
+    # VerifyForgetPasswordPage.VerifyForgetPassword()
+
+    # Emai2.Email()

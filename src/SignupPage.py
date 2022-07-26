@@ -265,10 +265,10 @@ class SignUp:
              signUpButton.config(cursor="hand2" , state=NORMAL)
 
 
-
             else :
                 signUpButton.config(state=DISABLED)
         root.bind('<Return>', signUPButtonHandler)
+
 
 
 
@@ -287,6 +287,7 @@ class SignUp:
         def helpButtonHandler(event):
             root.destroy()
             HelpPage.Help()
+
         def helpButtonHandler2():
             root.destroy()
             HelpPage.Help()

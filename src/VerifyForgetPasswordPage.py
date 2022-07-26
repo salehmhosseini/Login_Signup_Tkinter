@@ -1,15 +1,18 @@
 from tkinter import *
 import time
 from tkinter import messagebox
+
+import ForgetPasswordPage
 import LoginPage
 import SignupPage
 import Email
 import Emai2
+import ChangePasswordPage
 
 
 class VerifyForgetPassword:
     def __init__(self):
-        Emai2.Email2()
+        # Emai2.Email()
         root = Tk()
 
         # icon image
@@ -17,7 +20,7 @@ class VerifyForgetPassword:
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
-        root.title("Confirm email Page")
+        root.title("Verify forget password page")
         root.resizable(False, False)
 
 
@@ -58,22 +61,28 @@ class VerifyForgetPassword:
 
         #verify button handler
         def verifyButtonHandler():
-            if(Email.Email.verifyCodeVariable==int(verifyEntry.get())):
-                messagebox.showinfo("successfully" , "you are successfully signed up!")
+            if(Emai2.Email.verifyCodeVariable == int(verifyEntry.get())):
+                messagebox.showinfo("successfully" , "Change your password!")
+                root.destroy()
+                ChangePasswordPage.CahngePassword()
+                verifyEntry.config(bd="white")
+
+
             else:
                 messagebox.showerror("error" , "the verify code that entered is not valid!")
+                verifyEntry.config(bd="#ffe1e1")
 
 
         #verifyButton
 
         verifyButton = Button(root , text="Verify" , width=10 , height=2 , font=("plain" , 13 )  ,
-                              bd = 3 , bg="#E4CDEF" , command=verifyButtonHandler)
+                              bd = 3 , bg="#E4CDEF" , command=verifyButtonHandler , cursor="hand2")
         verifyButton.pack()
 
-        # back to signup page Button handler
-        def backToSignUpPageButton():
+        # back to forget password page Button handler
+        def backToForgetPasswordPage():
             root.destroy()
-            SignupPage.SignUp()
+            ForgetPasswordPage.ForgetPassword()
 
         # back to loin page button
         def backToLoginPageButtonHandler():
@@ -81,9 +90,9 @@ class VerifyForgetPassword:
             LoginPage.LoginPage()
 
         # back to signup page Button
-        backToSignUpPageButton = Button(root, text="Back To Signup ", font=("plain", 13),
-                                        width=15, bd=3, bg="#E4CDEF", cursor="hand2", command=backToSignUpPageButton)
-        backToSignUpPageButton.place(x=15, y=10)
+        backToForgetPasswordPage = Button(root, text="Back To Forget Password Page ", font=("plain", 13),
+                                         bd=3, bg="#E4CDEF", cursor="hand2", command=backToForgetPasswordPage)
+        backToForgetPasswordPage.place(x=15, y=10)
 
         # back to loin page button
         backToLoginPageButton = Button(root, text="Login ", font=("plain", 13),
@@ -93,8 +102,8 @@ class VerifyForgetPassword:
 
         # email sender function
         def emailSender():
-            root.update()
-            Emai2.Email2()
+            print("salam")
+            # Emai2.Email()
 
 
 
@@ -110,7 +119,7 @@ class VerifyForgetPassword:
         # setting the default value as 0
 
         minute.set("00")
-        second.set("02")
+        second.set("200")
 
         # Using Entry class to take input from the user
 
@@ -137,11 +146,20 @@ class VerifyForgetPassword:
 
         # button widget
         resendButton = Button(root, text='Resend code', bd=3,
-                              state=DISABLED, bg="#E4CDEF" , command=emailSender )
+                              state=NORMAL, bg="#E4CDEF" )
         resendButton.place(x=456, y=499)
 
         def countdowntimer():
-            resendButton.config(state=DISABLED)
+
+            def sequence(*functions):
+                def func(*args, **kwargs):
+                    return_value = None
+                    for function in functions:
+                        return_value = function(*args, **kwargs)
+                    return return_value
+
+                return func
+
             verifyButton.config(state=NORMAL)
             global user_input
             try:
@@ -169,7 +187,7 @@ class VerifyForgetPassword:
                     messagebox.showinfo("Time Countdown", "Time of input is over . click resend code to be send you a new code ")
                     minute.set("00")
                     second.set("02")
-                    resendButton.config(state=NORMAL , command=countdowntimer)
+                    resendButton.config(state=NORMAL ,command=sequence(emailSender , countdowntimer))
                     verifyButton.config(state=DISABLED)
 
                 # decresing the value of temp

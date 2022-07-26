@@ -4,13 +4,17 @@ import smtplib
 import ForgetPasswordPage
 import SignupPage
 
-class Email2:
+class Email:
     verifyCodeVariable = int
 
     def __init__(self):
         def makeRandomNumber(self):
-           Email2.verifyCodeVariable= random.randrange(100000, 999999)
-           return Email2.verifyCodeVariable
+           Email.verifyCodeVariable= random.randrange(100000, 999999)
+           return Email.verifyCodeVariable
+
+        # email : salehteset2002@gmail.com
+        #password : "indryqehepsntkem"
+
 
 
         def getEmail(self):
@@ -20,9 +24,9 @@ class Email2:
 
         def sendMail(self):
             emailHost = "smtp.gmail.com"
-            emailHostUser = "salehtest2002@gmail.com"
+            emailHostUser = "salehtest22002@gmail.com"
             emailPortSSL = 465
-            emailHostPassword = "indryqehepsntkem"
+            emailHostPassword ="vshyekedzycrdyre"
 
             with smtplib.SMTP_SSL(emailHost, emailPortSSL) as server:
                 server.login(emailHostUser, emailHostPassword)

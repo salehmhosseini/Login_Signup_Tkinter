@@ -1,9 +1,13 @@
+from logging import root
 from time import strftime
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
 
-from captcha.image import *
+
+from captcha.image import ImageCaptcha
+
+import Email
 import SignupPage
 import ForgetPasswordPage
 import random
@@ -13,6 +17,7 @@ import webbrowser
 class LoginPage:
 
     def __init__(self):
+
         # creat an object from Tkinter
         root = Tk()
 
@@ -25,6 +30,9 @@ class LoginPage:
         root.geometry("1000x650")
         root.title("Login Page")
         root.resizable(False, False)
+
+        #statuses
+        self.captchaStatus = False
 
         # logo image
         logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
@@ -74,47 +82,57 @@ class LoginPage:
 
 
        # catcha generator
+
         self.image = ImageCaptcha(width=200, height=60)
+
         self.x = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase
                                        + string.digits) for _ in range(5))
-
         self.captcha_text = self.x
-
 
         self.image.write(self.captcha_text, 'CAPTCHA.png')
 
-        self.captchaImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\src/CAPTCHA.png")
+        self.captchaImage = PhotoImage(
+            file=r"D:\Learn\programming\python\project1\The-first-python-project\src/CAPTCHA.png")
         self.captchaImage.subsample(80, 80)
         self.captchaLabel = Label(root, image=self.captchaImage)
         self.captchaLabel.pack(pady=10)
-        # function of return button to handle it
-        def returnButtonHandler():
-           pass
+
+
+        #captcha entry controller
+        def captchaEntryController(event):
+            if(captchaEntry.get()==self.x):
+                captchaEntry.config(bg="white")
+                self.captchaStatus=True
+            else:
+                captchaEntry.config(bg="#ffe1e1")
+                self.captchaStatus = False
+
 
         #captcha entry
         captchaEntry = Entry(root ,width=20 , font=("plain" ,13,  "bold") , bd=2 )
         captchaEntry.pack()
+        captchaEntry.bind("<Return>" , captchaEntryController)
 
-        #verify captcha button
-        verifyButton = Button(root  ,text="verify" , font=("plain" , 12 ) , height=0
-                              , cursor="hand2" , fg="red" , bg="#E4CDEF" )
 
-        verifyButton.place(x=610 , y=449)
 
         # change the captcha code by cliking on return button
 
         returnImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\return.png")
-        returnLabel= Label(root , image =returnImage , cursor="hand2" , bg='LightCyan2')
-        returnLabel.bind("<Button-1>" , returnButtonHandler())
+        returnButton = Button(root , image=returnImage , cursor="hand2" )
 
-        returnLabel.place(x=610 , y=392)
+        returnButton.place(x=610 , y=392)
 
 
 
         # loginLabel.config(text = input.get())
         def loginButtonHandler():
+            if(self.captchaStatus==False):
+                messagebox.showerror("warning ", "Enter the correct captcha code!")
+            else:
+                messagebox.showinfo("Login status ", "You are successfully loged in!")
 
-               messagebox.showinfo("Login status ", "You are successfully loged in!" )
+
+
         #check robot label
         checkRobotLabel = Label(text="Im NOT a robot " , font=("plain" ,12) , bg="LightCyan2")
 

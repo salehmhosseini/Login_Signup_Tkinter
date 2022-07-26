@@ -4,11 +4,13 @@ from tkinter import messagebox
 import LoginPage
 import SignupPage
 import Email
+import Emai2
 
 
 class EmailConfirm:
     def __init__(self):
-        Email.Email()
+        # Email.Email()
+
         root = Tk()
 
         # icon image
@@ -59,14 +61,18 @@ class EmailConfirm:
         def verifyButtonHandler():
             if(Email.Email.verifyCodeVariable==int(verifyEntry.get())):
                 messagebox.showinfo("successfully" , "you are successfully signed up!")
+                verifyEntry.config(bd="white")
+
+
             else:
                 messagebox.showerror("error" , "the verify code that entered is not valid!")
+                verifyEntry.config(bd="#ffe1e1")
 
 
         #verifyButton
 
         verifyButton = Button(root , text="Verify" , width=10 , height=2 , font=("plain" , 13 )  ,
-                              bd = 3 , bg="#E4CDEF" , command=verifyButtonHandler)
+                              bd = 3 , bg="#E4CDEF" , command=verifyButtonHandler , cursor="hand2")
         verifyButton.pack()
 
         # back to signup page Button handler
@@ -92,8 +98,10 @@ class EmailConfirm:
 
         # email sender function
         def emailSender():
-            root.update()
-            Email.Email()
+             print("salam")
+
+
+             # Email.Email()
 
 
 
@@ -136,11 +144,19 @@ class EmailConfirm:
 
         # button widget
         resendButton = Button(root, text='Resend code', bd=3,
-                              state=DISABLED, bg="#E4CDEF" , command=emailSender )
+                              state=NORMAL, bg="#E4CDEF" , command=emailSender)
         resendButton.place(x=456, y=499)
 
         def countdowntimer():
-            resendButton.config(state=DISABLED)
+            def sequence(*functions):
+                def func(*args, **kwargs):
+                    return_value = None
+                    for function in functions:
+                        return_value = function(*args, **kwargs)
+                    return return_value
+
+                return func
+
             verifyButton.config(state=NORMAL)
             global user_input
             try:
@@ -168,7 +184,7 @@ class EmailConfirm:
                     messagebox.showinfo("Time Countdown", "Time of input is over . click resend code to be send you a new code ")
                     minute.set("00")
                     second.set("02")
-                    resendButton.config(state=NORMAL , command=countdowntimer)
+                    resendButton.config(state=NORMAL , command=sequence(emailSender , countdowntimer))
                     verifyButton.config(state=DISABLED)
 
                 # decresing the value of temp

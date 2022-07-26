@@ -13,7 +13,7 @@ class Help:
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
-        root.title("Help")
+        root.title("Help page")
         root.resizable(False, False)
 
         # logo image
