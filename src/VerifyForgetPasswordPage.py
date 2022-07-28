@@ -4,19 +4,17 @@ from tkinter import messagebox
 
 import ForgetPasswordPage
 import LoginPage
-import SignupPage
-import Email
-import Emai2
+import Email2
 import ChangePasswordPage
 
 
 class VerifyForgetPassword:
     def __init__(self):
-        # Emai2.Email()
+        Email2.Email()
         root = Tk()
 
         # icon image
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        iconImage = PhotoImage(file="logo.png")
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
@@ -28,7 +26,7 @@ class VerifyForgetPassword:
         self.verifyEntryValue = StringVar
 
         # logo image
-        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        logoImage = PhotoImage(file="logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label
@@ -102,11 +100,8 @@ class VerifyForgetPassword:
 
         # email sender function
         def emailSender():
-            print("salam")
-            # Emai2.Email()
 
-
-
+            Email2.Email()
 
         ###########################
 
@@ -119,7 +114,7 @@ class VerifyForgetPassword:
         # setting the default value as 0
 
         minute.set("00")
-        second.set("200")
+        second.set("120")
 
         # Using Entry class to take input from the user
 
@@ -186,7 +181,7 @@ class VerifyForgetPassword:
                 if (user_input == 0):
                     messagebox.showinfo("Time Countdown", "Time of input is over . click resend code to be send you a new code ")
                     minute.set("00")
-                    second.set("02")
+                    second.set("120")
                     resendButton.config(state=NORMAL ,command=sequence(emailSender , countdowntimer))
                     verifyButton.config(state=DISABLED)
 

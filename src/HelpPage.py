@@ -1,4 +1,3 @@
-
 from tkinter import *
 import LoginPage
 import SignupPage
@@ -9,7 +8,7 @@ class Help:
     def __init__(self):
         root = Tk()
         # icon image
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        iconImage = PhotoImage(file="logo.png")
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
@@ -17,7 +16,7 @@ class Help:
         root.resizable(False, False)
 
         # logo image
-        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        logoImage = PhotoImage(file="logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label
@@ -32,7 +31,7 @@ class Help:
 
         helpExplainLabel = Label(root , bg='LightCyan2' ,font=("plain" , 13) , text="This is explanations for each of text fields in sign up page "
                                                                   "to understand how to have to fill the entries , read the following :)\n\n"
-                                                                  "First name : should be input a first name that has more than 3 character.\n\n"
+                                                                  "First name : should be input a first name that has more than 3 characters.\n\n"
                                                                   "Last name : Same of the first name \n\n"
                                                                   "Phone number:should be input a phone number that it first character be 0 and seconds be 9 and "
                                                                   "it should be has 11 numeric characters \n\n"
@@ -45,7 +44,7 @@ class Help:
                                                                   "confirm password : it shoud be right equal to password entries\n\n"
                                                                   "***************************************************************************\n\n"
                                                                   "Hint 1 : The signup button is disable and when you fill all of the entries correctly if will be enable\n\n"
-                                                                  "Hint 2 : For confident filling and check your input , you should press enter after each time of fill")
+                                                                  "Hint 2 : For confident filling and check your input , you should press enter after each time of fill\n\n Author : Saleh.mh")
 
 
 

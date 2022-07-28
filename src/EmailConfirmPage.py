@@ -4,17 +4,17 @@ from tkinter import messagebox
 import LoginPage
 import SignupPage
 import Email
-import Emai2
+import SQL
 
 
 class EmailConfirm:
     def __init__(self):
-        # Email.Email()
+        Email.Email()
 
         root = Tk()
 
         # icon image
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        iconImage = PhotoImage(file="logo.png")
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
@@ -26,7 +26,7 @@ class EmailConfirm:
         self.verifyEntryValue = StringVar
 
         # logo image
-        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        logoImage = PhotoImage(file="logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label
@@ -60,6 +60,8 @@ class EmailConfirm:
         #verify button handler
         def verifyButtonHandler():
             if(Email.Email.verifyCodeVariable==int(verifyEntry.get())):
+                SQL.insertSQL()
+
                 messagebox.showinfo("successfully" , "you are successfully signed up!")
                 verifyEntry.config(bd="white")
 
@@ -98,12 +100,7 @@ class EmailConfirm:
 
         # email sender function
         def emailSender():
-             print("salam")
-
-
-             # Email.Email()
-
-
+            Email.Email()
 
 
         ###########################
@@ -117,7 +114,7 @@ class EmailConfirm:
         # setting the default value as 0
 
         minute.set("00")
-        second.set("02")
+        second.set("120")
 
         # Using Entry class to take input from the user
 
@@ -183,7 +180,7 @@ class EmailConfirm:
                 if (user_input == 0):
                     messagebox.showinfo("Time Countdown", "Time of input is over . click resend code to be send you a new code ")
                     minute.set("00")
-                    second.set("02")
+                    second.set("120")
                     resendButton.config(state=NORMAL , command=sequence(emailSender , countdowntimer))
                     verifyButton.config(state=DISABLED)
 

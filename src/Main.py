@@ -1,4 +1,6 @@
-import Emai2
+#Author : Saleh.MHosseini
+
+
 import Email
 import HelpPage
 import LoginPage
@@ -8,21 +10,20 @@ import ForgetPasswordPage
 import test
 import ChangePasswordPage
 import VerifyForgetPasswordPage
-import Emai2
+import Email2
+
 
 class main:
 
     def __init__(self):
         pass
 
-    # LoginPage.LoginPage()
+    LoginPage.LoginPage()
     # HelpPage.Help()
     # EmailConfirmPage.EmailConfirm()
     # test.EmailConfirm()
     # SignupPage.SignUp()
-    ForgetPasswordPage.ForgetPassword()
+    # ForgetPasswordPage.ForgetPassword()
     # Email.Email()
     # ChangePasswordPage.CahngePassword()
     # VerifyForgetPasswordPage.VerifyForgetPassword()
-
-    # Emai2.Email()

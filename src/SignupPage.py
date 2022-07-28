@@ -1,21 +1,23 @@
 from tkinter import *
 import re
-
-import Email
 import EmailConfirmPage
 import HelpPage
-
-
-
 import LoginPage
 
 
 class SignUp:
     emailVariable = StringVar
+    inputFirstName = StringVar
+    inputLastName = StringVar
+    inputPhone = StringVar
+    inputEmail = StringVar
+    inputUername = StringVar
+    inputPassword = StringVar
+
     def __init__(self):
 
         root = Tk()
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\logo.png")
+        iconImage = PhotoImage(file="logo.png")
         root.iconphoto(False, iconImage)
         root.geometry("1000x650")
         root.title("Signup Page")
@@ -30,6 +32,8 @@ class SignUp:
         self.usernameStatus = False
         self.passwordStatus= False
         self.cnfirmPasswordStatus=False
+
+
 
 
 
@@ -61,6 +65,7 @@ class SignUp:
             if(self.firstNameStatus):
                 firstNameTextField.config(bg="white")
                 lastNameTextField.focus_set()
+                SignUp.inputFirstName=firstNameTextField.get()
 
             else :
                 firstNameTextField.config(bg="#ffe1e1")
@@ -89,6 +94,7 @@ class SignUp:
             if (self.lastNameStatus):
                 lastNameTextField.config(bg="white")
                 phoneNumberTextField.focus_set()
+                SignUp.inputLastName=lastNameTextField.get()
 
             else:
                 lastNameTextField.config(bg="#ffe1e1")
@@ -125,6 +131,7 @@ class SignUp:
             if(self.phoneNumberStatus and overriding()):
                 phoneNumberTextField.config(bg="white")
                 emailTextField.focus_set()
+                SignUp.inputPhone=phoneNumberTextField.get()
 
             else :
                 phoneNumberTextField.config(bg="#ffe1e1")
@@ -157,6 +164,7 @@ class SignUp:
                 emailTextField.config(bg="white")
                 userNameTextField.focus_set()
                 SignUp.emailVariable=emailTextField.get()
+                SignUp.inputEmail=emailTextField.get()
 
             else:
                 emailTextField.config(bg="#ffe1e1")
@@ -179,6 +187,7 @@ class SignUp:
             if (self.usernameStatus):
                 userNameTextField.config(bg="white")
                 passwordTextField.focus_set()
+                SignUp.inputUername=userNameTextField.get()
 
             else:
                 userNameTextField.config(bg="#ffe1e1")
@@ -210,6 +219,8 @@ class SignUp:
             if (self.passwordStatus and checkPassword(passwordTextField.get())):
                 passwordTextField.config(bg="white")
                 confirmPasswordTextField.focus_set()
+                SignUp.inputPassword=passwordTextField.get()
+
 
             else:
                 passwordTextField.config(bg="#ffe1e1")
@@ -237,6 +248,7 @@ class SignUp:
 
             if (self.cnfirmPasswordStatus):
                 confirmPasswordTextField.config(bg="white")
+                SignUp.inputPassword=passwordTextField.get()
 
             else:
                 confirmPasswordTextField.config(bg="#ffe1e1")

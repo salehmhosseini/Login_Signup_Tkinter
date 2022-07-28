@@ -8,7 +8,7 @@ class CahngePassword:
     def __init__(self):
         root = Tk()
         # icon image
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        iconImage = PhotoImage(file="logo.png")
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
         root.geometry("1000x650")
@@ -16,7 +16,7 @@ class CahngePassword:
         root.resizable(False, False)
 
         # logo image
-        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        logoImage = PhotoImage(file="logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label

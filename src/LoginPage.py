@@ -1,4 +1,4 @@
-from logging import root
+import re
 from time import strftime
 from tkinter import *
 import tkinter as tk
@@ -6,15 +6,16 @@ from tkinter import messagebox
 
 
 from captcha.image import ImageCaptcha
-
-import Email
 import SignupPage
 import ForgetPasswordPage
 import random
 import string
-
 import webbrowser
 class LoginPage:
+
+
+    emailvar = StringVar
+    passwordvar = StringVar
 
     def __init__(self):
 
@@ -22,7 +23,7 @@ class LoginPage:
         root = Tk()
 
         # icon image
-        iconImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        iconImage = PhotoImage(file="logo.png")
 
         root.iconphoto(False, iconImage)
         root.config(bg='LightCyan2')
@@ -33,9 +34,14 @@ class LoginPage:
 
         #statuses
         self.captchaStatus = False
+        self.emailStatus = False
+        self.passwordStatus = False
+
+        self.email = StringVar
+        self.password = StringVar
 
         # logo image
-        logoImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures/logo.png")
+        logoImage = PhotoImage(file="logo.png")
         logoImage = logoImage.subsample(3, 3)
 
         # logo label
@@ -54,18 +60,77 @@ class LoginPage:
         emailLabel = Label(root, text="Email", fg="black", font=("segoe print", 17, "bold") , bg='LightCyan2')
         emailLabel.pack()
 
-
         # email entry
         emailTextField = Entry(root , width=26, font=("plain", 13, "bold") , bd = 2)
         emailTextField.pack()
+
+        # email controller bye regex (regular expression)
+        EmailRegex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+
+        def checkEmail(email):
+
+            if (re.search(EmailRegex, email)):
+                return True
+            else:
+                return False
+
+        def emailController(event):
+
+            self.emailStatus = checkEmail(emailTextField.get())
+
+            if (self.emailStatus):
+                emailTextField.config(bg="white")
+                passwordTextField.focus_set()
+                LoginPage.emailVariable = emailTextField.get()
+                self.email = emailTextField.get()
+                self.emailStatus=True
+
+            else:
+                emailTextField.config(bg="#ffe1e1")
+                self.emailStatus=False
+
+        emailTextField.bind('<Return>', emailController)
 
         # password label
         passLabel = Label(root, text="Password", fg="black", font=("segoe print", 17, "bold") , bg='LightCyan2')
         passLabel.pack()
 
         # password entry
-        passTextField = Entry(root, width=26, show="*", font=("plain", 13, "bold") , bd=2)
-        passTextField.pack()
+        passwordTextField = Entry(root, width=26, show="*", font=("plain", 13, "bold") , bd=2)
+        passwordTextField.pack()
+
+        # password controller
+
+        PasswordRegex = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$"
+
+        def checkPassword(password):
+
+            if (re.search(PasswordRegex, password)):
+                return True
+            else:
+                return False
+
+        def lenController( string, length):
+            if (len(string) < length or len(string) == 0):
+                return False
+            else:
+                return True
+
+        def passwordController(event):
+
+            self.passwordStatus = lenController(passwordTextField.get(), 8)
+
+            if (self.passwordStatus and checkPassword(passwordTextField.get())):
+                passwordTextField.config(bg="white")
+
+                LoginPage.passwordvar = passwordTextField.get()
+
+
+            else:
+                passwordTextField.config(bg="#ffe1e1")
+
+        passwordTextField.bind('<Return>', passwordController)
+
         #function of switch to forget password page
         def switchToForgetPasswordPage(self):
             root.destroy()
@@ -73,10 +138,24 @@ class LoginPage:
         # foreget password hyper link
 
 
-        forgetPasswordHyper = Label(root, text="Forget password", fg="blue",
+        forgetPasswordHyper = Label(root, text="Forgot password", fg="blue",
                                     cursor="hand2" , font=("plain", 12) , bg='LightCyan2')
         forgetPasswordHyper.pack(pady=5)
         forgetPasswordHyper.bind("<Button-1>",switchToForgetPasswordPage)
+
+        #login logic function
+
+
+        def loginLogic():
+            pass
+            # SQL.insertSQL()
+
+            # if(SQL.updateSQL()):
+            #     messagebox.showinfo("salam" , "ok")
+            # else:
+            #     messagebox.showinfo("salam" , "NOk")
+
+
 
 
 
@@ -92,7 +171,7 @@ class LoginPage:
         self.image.write(self.captcha_text, 'CAPTCHA.png')
 
         self.captchaImage = PhotoImage(
-            file=r"D:\Learn\programming\python\project1\The-first-python-project\src/CAPTCHA.png")
+            file="CAPTCHA.png")
         self.captchaImage.subsample(80, 80)
         self.captchaLabel = Label(root, image=self.captchaImage)
         self.captchaLabel.pack(pady=10)
@@ -117,19 +196,28 @@ class LoginPage:
 
         # change the captcha code by cliking on return button
 
-        returnImage = PhotoImage(file=r"D:\Learn\programming\python\project1\The-first-python-project\pictures\return.png")
-        returnButton = Button(root , image=returnImage , cursor="hand2" )
+        returnImage = PhotoImage(file="return.png")
+        returnButton = Button(root , image=returnImage , cursor="hand2" , bd=0 , bg = "LightCyan2"  )
 
         returnButton.place(x=610 , y=392)
 
 
-
-        # loginLabel.config(text = input.get())
+        # login button hedler fuction
         def loginButtonHandler():
+
             if(self.captchaStatus==False):
                 messagebox.showerror("warning ", "Enter the correct captcha code!")
+
+            if(self.passwordStatus==False):
+                messagebox.showerror("warning ", "Enter the correct password!")
+
+            #TODO
+            # if(SQL.selectSQL()==False):
+            #     messagebox.showerror("warning ", "your input email is not match the password!")
+
             else:
                 messagebox.showinfo("Login status ", "You are successfully loged in!")
+
 
 
 
