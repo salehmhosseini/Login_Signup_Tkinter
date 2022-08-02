@@ -1,8 +1,15 @@
 # The-first-python-project
 This is my first python project . in this project , i implement a simple Login and Signup page using gui .
 Tkinter is my gui toolkit in this project . 
-> ## Have a enjoy reading :)
-# Test
+> ### Have an enjoy reading :)
+## Basic information :
+### Graphics :
+- Tkinter
+### Database:
+- MySql
+  - PHPMYADMIN
+
+
 salam
 ## test2
 - point1
