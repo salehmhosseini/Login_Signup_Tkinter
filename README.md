@@ -41,9 +41,9 @@ Tkinter is my gui toolkit in this project .
 > finally , if you are input correct code in confirm email page , you are go to the change password page and you can change and update your password . 
 > ![change password page image](https://github.com/salehmhosseini/The-first-python-project/blob/1a06193cb5df79ef98d71e2fd6f4ca465cc83f50/screenshots/change%20password%20page.png)
  ***
-# Anf Finally...
+# And Finally...
 ## Thanks :)
-
+,,,
 Summer 2022 , (Mordad 1401)
-
+,,,
 
