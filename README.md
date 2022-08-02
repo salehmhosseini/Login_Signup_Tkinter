@@ -22,5 +22,6 @@ Tkinter is my gui toolkit in this project .
 > ![Signup page image](https://github.com/salehmhosseini/The-first-python-project/blob/6a1318bc4d30024647ebcb64d2dab7eb2406f8aa/screenshots/signup%20page.png)
 
 > then , you are going to the  email confirm page .
+> ---
 # Email Confirm Page
 >
