@@ -7,7 +7,9 @@ Tkinter is my gui toolkit in this project .
 - Tkinter
 ### Database:
 - MySql
-  - PHPMYADMIN
+  - PhpMyAdmin
+***
+
 
 
 salam
