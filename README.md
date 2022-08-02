@@ -29,7 +29,8 @@ Tkinter is my gui toolkit in this project .
 ![verify email page image](https://github.com/salehmhosseini/The-first-python-project/blob/24ee3b43e60229c6396ad3a74db776b87074d319/screenshots/Verify%20email%20page.png)
 > if you are correctly fill the entry , you saw a pop-up message that say : you are successfully signed up !
 ![verify email page2 image](https://github.com/salehmhosseini/The-first-python-project/blob/028dacdb68c77ba28090d763b075d3a2eb3766b2/screenshots/verify%20email%20page2.png)
-> finally , your registeration weill be complete . and your information is stored in the database.
+> finally , your registeration weill be complete . and your information stored in the database.
+> 
 > ![database image](https://github.com/salehmhosseini/The-first-python-project/blob/028dacdb68c77ba28090d763b075d3a2eb3766b2/screenshots/db.png)
 > ****
 
