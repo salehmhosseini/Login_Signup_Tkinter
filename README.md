@@ -1,6 +1,7 @@
 # The-first-python-project
-register and login page
-
+This is my first python project . in this project , i implement a simple Login and Signup page using gui .
+Tkinter is my gui toolkit in this project . 
+> ## Have a enjoy reading :)
 # Test
 salam
 ## test2
