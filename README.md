@@ -17,4 +17,4 @@ Tkinter is my gui toolkit in this project .
 
 ***
 # Signup Page
-> In this page ypu should fill all of the blank fileds with the correct formating . [See help page to fill correctly]([https://pages.github.com/](https://github.com/salehmhosseini/The-first-python-project/blob/8c4dc648470224393e63b0d128c1876d6d50f3f7/screenshots/Help%20page.png)).
+> In this page ypu should fill all of the blank fileds with the correct formating . [See help page to fill correctly](https://github.com/salehmhosseini/The-first-python-project/blob/8c4dc648470224393e63b0d128c1876d6d50f3f7/screenshots/Help%20page.png)
