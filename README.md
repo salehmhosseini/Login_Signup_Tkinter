@@ -26,5 +26,10 @@ Tkinter is my gui toolkit in this project .
 # Email Confirm Page
 > now a 6-digits code will be send to your email [see here](https://github.com/salehmhosseini/The-first-python-project/blob/fefdaf11943c0a40b98007092b6fde5127aad7bd/screenshots/send%20email.png) and you should enter the same code in text field and click verify button .
 > if cutdown timer become 0 , press resend code button and check your email again . 
-![verify enail page image](https://github.com/salehmhosseini/The-first-python-project/blob/24ee3b43e60229c6396ad3a74db776b87074d319/screenshots/Verify%20email%20page.png)
+![verify email page image](https://github.com/salehmhosseini/The-first-python-project/blob/24ee3b43e60229c6396ad3a74db776b87074d319/screenshots/Verify%20email%20page.png)
+> if you are correctly fill the entry , you saw a pop-up message that say : you are successfully signed up !
+![verify email page2 image](https://github.com/salehmhosseini/The-first-python-project/blob/028dacdb68c77ba28090d763b075d3a2eb3766b2/screenshots/verify%20email%20page2.png)
+> finally , your registeration weill be complete . and your information is stored in the database.
+> ![database image](https://github.com/salehmhosseini/The-first-python-project/blob/028dacdb68c77ba28090d763b075d3a2eb3766b2/screenshots/db.png)
+> ****
 
