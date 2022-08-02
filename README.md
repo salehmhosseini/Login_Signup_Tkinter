@@ -19,11 +19,12 @@ Tkinter is my gui toolkit in this project .
 # Signup Page
 > In this page ypu should fill all of the blank fileds with the correct formating . [See help page to fill correctly](https://github.com/salehmhosseini/The-first-python-project/blob/8c4dc648470224393e63b0d128c1876d6d50f3f7/screenshots/Help%20page.png)
 > When you fill all of the blank fields correctly , press enter, now signup button is enable and ypu should press on this button .
-> ![Signup page image](https://github.com/salehmhosseini/The-first-python-project/blob/6a1318bc4d30024647ebcb64d2dab7eb2406f8aa/screenshots/signup%20page.png)
+![Signup page image](https://github.com/salehmhosseini/The-first-python-project/blob/6a1318bc4d30024647ebcb64d2dab7eb2406f8aa/screenshots/signup%20page.png)
 
 > then , you are going to the  email confirm page .
 > ***
 # Email Confirm Page
 > now a 6-digits code will be send to your email [see here](https://github.com/salehmhosseini/The-first-python-project/blob/fefdaf11943c0a40b98007092b6fde5127aad7bd/screenshots/send%20email.png) and you should enter the same code in text field and click verify button .
 > if cutdown timer become 0 , press resend code button and check your email again . 
+![verify enail page image](https://github.com/salehmhosseini/The-first-python-project/blob/24ee3b43e60229c6396ad3a74db776b87074d319/screenshots/Verify%20email%20page.png)
 
