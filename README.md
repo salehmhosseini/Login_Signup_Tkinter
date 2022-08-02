@@ -25,4 +25,5 @@ Tkinter is my gui toolkit in this project .
 > ***
 # Email Confirm Page
 > now a 6-digits code will be send to your email [see here](https://github.com/salehmhosseini/The-first-python-project/blob/fefdaf11943c0a40b98007092b6fde5127aad7bd/screenshots/send%20email.png) and you should enter the same code in text field and click verify button .
-> 
+> if cutdown timer become 0 , press resend code button and check your email again . 
+
