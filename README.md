@@ -22,6 +22,7 @@ Tkinter is my gui toolkit in this project .
 > ![Signup page image](https://github.com/salehmhosseini/The-first-python-project/blob/6a1318bc4d30024647ebcb64d2dab7eb2406f8aa/screenshots/signup%20page.png)
 
 > then , you are going to the  email confirm page .
-> ---
+> ***
 # Email Confirm Page
->
+> now a 6-digits code will be send to your email (see here)[https://github.com/salehmhosseini/The-first-python-project/blob/fefdaf11943c0a40b98007092b6fde5127aad7bd/screenshots/send%20email.png] and you should enter the same code in text field and click verify button .
+> 
