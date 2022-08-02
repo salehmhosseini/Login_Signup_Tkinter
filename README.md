@@ -33,4 +33,12 @@ Tkinter is my gui toolkit in this project .
 > 
 > ![database image](https://github.com/salehmhosseini/The-first-python-project/blob/028dacdb68c77ba28090d763b075d3a2eb3766b2/screenshots/db.png)
 > ****
+# Forget Password Page
+>if forgot your password , go to login page and clock on forget password hyper link . then , you go to the page forget passwword . 
+![forget password page image](https://github.com/salehmhosseini/The-first-python-project/blob/1a06193cb5df79ef98d71e2fd6f4ca465cc83f50/screenshots/Forgot%20password%20page.png)
+> here you should input your email to recovery your password . 
+> when click on send button , you are going to the confitm email page .
+> finally , if you are input correct code in confirm email page , you are go to the change password page and you can change and update your password . 
+> ![change password page image](https://github.com/salehmhosseini/The-first-python-project/blob/1a06193cb5df79ef98d71e2fd6f4ca465cc83f50/screenshots/change%20password%20page.png)
+
 
